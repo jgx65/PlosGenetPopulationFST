@@ -4,9 +4,9 @@ library(corrplot)
 library(gaston)
 source("fig_label.R")
 
-png("rmse_FIM_M4_new2.png",height=500,width=500)
+png("rmse_FIM_M4_new2_1000x1000.png",height=1000,width=1000)
 par(mfrow=c(3,2))
-corrplot(ebeta[[20]],is.corr=FALSE)
+corrplot(ebeta[[20]],is.corr=FALSE,cl.pos="b",cl.length=7)
 
 fig_label("A",cex=2)
 

@@ -59,6 +59,8 @@ abline(h=0:a+0.5,v=0:a+0.5)
 ########################################################
 source("fig_label.R")
 png("mig_coan_fst_new2.png",width=500,height=500)
+
+mycols<-c("orange","red","brown","purple","blue","green")
 par(mfrow=c(3,3))
 #Cont-island
 coul<-c("white","lightgrey","darkgrey")
@@ -94,9 +96,9 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=CIM,ngen=x))
 ebeta<-lapply(etheta,function(y) get.beta(y[-1,-1]))
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x)[-1])),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="red",lwd=2,ylim=c(0,1),
+plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="orange",lwd=2,ylim=c(0,1),
 main="")#c(paste0("m: ",m)," N: ",paste0(N[-1],collapse="/")))
-for (i in 2:6) lines(gens,etd[,i],col="red",lwd=2)
+for (i in 2:6) lines(gens,etd[,i],col=mycols[i],lwd=2)
 
 fig_label("D",cex=2)
 
@@ -108,13 +110,13 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=FIM,ngen=x))
 ebeta<-lapply(etheta,get.beta)
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x))),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="red",lwd=2,ylim=c(0,1),
+plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="orange",lwd=2,ylim=c(0,1),
 main="")#c(paste0("m: ",m)," N: ",paste0(N,collapse="/")))
-for (i in 2:6) lines(gens,etd[,i],col="red",lwd=2)
+for (i in 2:6) lines(gens,etd[,i],col=mycols[i],lwd=2)
 
 fig_label("E",cex=2)
 
-N<-c(100,100,1000,1000,50,10)
+N<-c(10,50,1000,1000,100,100)
 m<-0.01
 SSM<-matrix(0,ncol=6,nrow=6)
 diag(SSM[-1,-6])<-diag(SSM[-6,-1])<-m/2
@@ -123,8 +125,8 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=SSM,ngen=x))
 ebeta<-lapply(etheta,get.beta)
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x))),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="red",lwd=2,ylim=c(0,1),main="")#c(paste0("m: ",m)," N: ",paste0(N,collapse="/")))
-for (i in 2:6) lines(gens,etd[,i],col="red",lwd=2)
+plot(gens,etd[,1],xlab="gens",ylab="Coan.",type="l",col="orange",lwd=2,ylim=c(0,1),main="")#c(paste0("m: ",m)," N: ",paste0(N,collapse="/")))
+for (i in 2:6) lines(gens,etd[,i],col=mycols[i],lwd=2)
 
 fig_label("F",cex=2)
 
@@ -142,7 +144,7 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=CIM,ngen=x))
 ebeta<-lapply(etheta,function(y) get.beta(y[-1,-1]))
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x)[-1])),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="red",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col="red",lwd=2)
+plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="orange",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col=mycols[i],lwd=2)
 
 fig_label("G",cex=2)
 
@@ -156,13 +158,13 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=FIM,ngen=x))
 ebeta<-lapply(etheta,get.beta)
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x))),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="red",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col="red",lwd=2)
+plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="orange",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col=mycols[i],lwd=2)
 
 fig_label("H",cex=2)
 
 
 
-N<-c(100,100,1000,1000,50,10)
+N<-c(10,50,1000,1000,100,100)
 m<-0.01
 SSM<-matrix(0,ncol=6,nrow=6)
 diag(SSM[-1,-6])<-diag(SSM[-6,-1])<-m/2
@@ -171,7 +173,7 @@ etheta<-lapply(gens,function(x) get.coan(N=N,mut=1e-8,M=SSM,ngen=x))
 ebeta<-lapply(etheta,get.beta)
 etd<-matrix(unlist(lapply(etheta,function(x) diag(x))),ncol=6,byrow=TRUE)
 etb<-matrix(unlist(lapply(ebeta,function(x) diag(x))),ncol=6,byrow=TRUE)
-plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="red",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col="red",lwd=2)
+plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="orange",lwd=2,ylim=c(-0.1,1));for (i in 2:6) lines(gens,etb[,i],col=mycols[i],lwd=2)
 
 fig_label("I",cex=2)
 par(mfrow=c(1,1))
