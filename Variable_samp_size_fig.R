@@ -1,5 +1,5 @@
-##assumes dos.g2k, 20 replicates of dosage data for 10'000 SNPs and 50 individuals in each of the 14 river-system populations obtained from sim.genot.metapop.t loaded in the environment
-
+load("rivsys.RData")
+library(hierfstat)
 ##unequal sample sizes
 #repl 1
 ss<-sample(rep(c(1:5*2,20,40),each=2),replace=FALSE)
@@ -94,11 +94,11 @@ par(mfrow=c(1,1))
 
 dev.off()
 #################################
-plot(ebeta[[20]],FsM.10kl[[1]],pch=16,col="red",ylim=range(unlist(FsM.10kl)),xlab="E[FST]",ylab="FST",main="");abline(c(0,1))
-for (i in 2:20) points(ebeta[[20]],FsM.10kl[[i]],pch=16,col="red")
+#plot(ebeta[[20]],FsM.10kl[[1]],pch=16,col="red",ylim=range(unlist(FsM.10kl)),xlab="E[FST]",ylab="FST",main="");abline(c(0,1))
+#for (i in 2:20) points(ebeta[[20]],FsM.10kl[[i]],pch=16,col="red")
 
-corrplot(FsM.10kl[[1]],is.corr=FALSE)
+#corrplot(FsM.10kl[[1]],is.corr=FALSE)
 
-corrplot(FsM.10kl.niv[[1]],is.corr=FALSE)
+#corrplot(FsM.10kl.niv[[1]],is.corr=FALSE)
 
 
