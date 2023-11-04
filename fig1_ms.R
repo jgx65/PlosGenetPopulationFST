@@ -58,7 +58,7 @@ abline(h=0:a+0.5,v=0:a+0.5)
 }
 ########################################################
 source("fig_label.R")
-png("mig_coan_fst_new2.png",width=500,height=500)
+#png("mig_coan_fst_new2.png",width=500,height=500)
 
 mycols<-c("orange","red","brown","purple","blue","green")
 par(mfrow=c(3,3))
@@ -177,7 +177,7 @@ plot(gens,etb[,1],xlab="gens",ylab="FST",type="l",col="orange",lwd=2,ylim=c(-0.1
 
 fig_label("I",cex=2)
 par(mfrow=c(1,1))
-dev.off()
+#dev.off()
 
 
 
