@@ -2,7 +2,7 @@ load("1kg_RMSE_FsM.RData")
 library(corrplot)
 source("fig_panel.R")
 
-png("1kgFsts_new_500x500.png",width=500,height=500)
+#png("1kgFsts_new_500x500.png",width=500,height=500)
 par(mfrow=c(2,2))
 corrplot(fs.all$FsM[op,op],is.corr=FALSE,cl.pos="b",cl.length=7)
 #corrplot(FstOS,is.corr=FALSE,tl.cex=0.5)
@@ -47,5 +47,5 @@ fig_label("D",cex=2)
 par(mfrow=c(1,1))
 
 
-dev.off()
+#dev.off()
 
