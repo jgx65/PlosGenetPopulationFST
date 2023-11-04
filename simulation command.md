@@ -3,7 +3,7 @@ The code necessary to generate the simulated data set and to estimate the FST ma
 
 ## Island model
 
-`sim.genot.metapop` commands to simulate the island model
+`sim.genot.metapop.t` commands to simulate the island model
 
 ```
 m<-0.001
@@ -20,7 +20,7 @@ dat<-hierfstat::sim.genot.metapop.t(nbal=2,nbloc=10000,nbpop=np,N=N,mig=M,mut=1e
 
 ## Stepping-stone
 
-`sim.genot.metapop` commands to simulate the stepping-stone
+`sim.genot.metapop.t` commands to simulate the stepping-stone
 
 ```
 np<-10
@@ -38,7 +38,7 @@ dat<-hierfstat::sim.genot.metapop.t(nbal=2,nbloc=10000,nbpop=np,N=N,mig=M,mut=1e
 
 ## River system
 
-`sim.genot.metapop` commands to simulate the river system:
+`sim.genot.metapop.t` commands to simulate the river system:
 
 ```
 md=0.02
