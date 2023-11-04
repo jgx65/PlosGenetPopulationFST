@@ -3,7 +3,7 @@ library(corrplot)
 library(gaston)
 source("fig_label.R")
 
-png("rmse_riversystem_new2_1000x1000.png",width=1000,height=1000)
+#png("rmse_riversystem_new2_500x500.png",width=500,height=500)
 #Obs vs expected for 10k, 1k and 100 loci for the whole matrix
 par(mfrow=c(3,2))
 corrplot(ebeta[[20]],is.corr=FALSE,cl.pos="b",cl.length=7)
@@ -44,5 +44,5 @@ fig_label("F",cex=2)
 
 
 par(mfrow=c(1,1))
-dev.off()
+#dev.off()
 
