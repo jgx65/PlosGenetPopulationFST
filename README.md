@@ -1,5 +1,5 @@
 # PlosGenetPopulationFST
-Figures from the manuscript  [An allele-sharing, moment-based estimator of global, population-specific and population-pair FST under a general model of population structure](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1010871)
+Figures from the article [Goudet J and Weir BS (2023) An allele-sharing, moment-based estimator of global, population-specific and population-pair FST under a general model of population structure. PLOS Genetics 19(11): e1010871](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1010871)
 
 Code to reproduce the figures from the manuscript are given in separate files
 
